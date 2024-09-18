@@ -16,7 +16,7 @@ $number = ((10*2)-5)+3;
 echo $number;
 echo "<br>";
 
-//dynamic variable (use $$)
+//dynamic variable (use $)
 $varName = "color";
 $varName= "blue";
 $color= $varName;
