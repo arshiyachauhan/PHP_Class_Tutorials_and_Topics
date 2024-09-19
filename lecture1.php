@@ -1,4 +1,4 @@
-<!-- Data Types -->
+<!-- Data Types and Variables-->
 <?php
 echo "<h1> Hello Vertos </h1>";
 //concatenate 2 strings
