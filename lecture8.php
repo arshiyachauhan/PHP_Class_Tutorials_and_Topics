@@ -96,7 +96,6 @@ if (is_numeric($share)) {
 } else {
     echo $share . "\n"; 
 }
-?>
 
 
 //call by reference- concerned with address, changes value entirely
