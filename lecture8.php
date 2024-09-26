@@ -79,6 +79,25 @@ if ($bmi < 18.5) {
 }
 
 //Bill Splitting for group dinner
+function calculateBillSplit($totalBill, $peopleCount) {
+    if ($peopleCount <= 0) {
+        return "The number of people must be greater than 0.";
+    }
+    $individualShare = $totalBill / $peopleCount;
+    return round($individualShare, 2);
+}
+$totalBill = readline("Enter the total bill amount: ₹");
+$peopleCount = readline("Enter the number of people: ");
+$totalBill = (float) $totalBill;
+$peopleCount = (int) $peopleCount;
+$share = calculateBillSplit($totalBill, $peopleCount);
+if (is_numeric($share)) {
+    echo "Each person needs to pay: ₹" . $share . "\n";
+} else {
+    echo $share . "\n"; 
+}
+?>
+
 
 //call by reference- concerned with address, changes value entirely
 //call by value- 
