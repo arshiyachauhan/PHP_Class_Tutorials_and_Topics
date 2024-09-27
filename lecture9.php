@@ -11,10 +11,8 @@ function sum(){
     // using $globals to access values stored in variables a,b 
      $sum = $GLOBALS['a']+ $GLOBALS['b'];
      return $sum;
-
 }
 echo sum();
-
 
 function staticvar() {
     static $a = 10; // Static variable retains its value across function calls
@@ -28,7 +26,6 @@ staticvar(); // Output: a: 11, b: 21
 staticvar(); // Output: a: 12, b: 21 (because $a is static and retains its value)
 
 
-
 //create a function with name outer which contains a local variable with any message. Inside this func define inner function that tries to 
 // access & modifies the value of variable. Display the value of variables from both functions. (nested func)
 function outer($a){
@@ -36,8 +33,7 @@ function outer($a){
     function inner(){
         $inner = $GLOBALS['a'];
         return $inner;
-
-    }
+     }
     echo inner();
 }
 
