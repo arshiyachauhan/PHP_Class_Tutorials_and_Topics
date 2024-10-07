@@ -60,7 +60,7 @@ create a form for input of 2 numbers and a dropdown to select operation, use GET
         if (is_numeric($result)) {
             echo "<h3>Result: {$num1} {$operationSymbol} {$num2} = {$result}</h3>";
         } else {
-            echo "<h3>{$result}</h3>"; // Display error for division by zero
+            echo "<h3>{$result}</h3>"; // Error for division by zero
         }
     }
     ?>
