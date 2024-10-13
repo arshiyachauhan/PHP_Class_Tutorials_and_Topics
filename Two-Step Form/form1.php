@@ -8,7 +8,7 @@ use $_REQUEST to pass data btw steps and display data on second  -->
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="step2(act).php">
+    <form method="POST" action="form2.php">
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" required><br><br>
         
