@@ -1,3 +1,3 @@
 <?php
-echo "the cookie with name: ",$_COOKIE['user'],"is set";
+echo "The cookie with name: ",$_COOKIE['user'],"is set";
 ?>
