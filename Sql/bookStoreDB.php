@@ -40,14 +40,13 @@ while ($row = $result->fetch_assoc()) {
 
 // Query to Calculate total stock of books
 $totalStock = $conn->query("SELECT SUM(stock) AS total_stock FROM books")->fetch_assoc();
-echo "<h2>Total books in stock: {$totalStock['total_stock']}</h2>";
+echo "<h3>Total books in stock: {$totalStock['total_stock']}</h3>";
 
 // Query to find the book with the maximum price
 $maxPriceResult = $conn->query("SELECT title, price FROM books ORDER BY price DESC LIMIT 1");
 $maxPriceBook = $maxPriceResult->fetch_assoc();
-echo "<h2>Book with the maximum price:</h2>";
-echo "Title: {$maxPriceBook['title']}<br>";
-echo "Price: {$maxPriceBook['price']}<br>";
+echo "<h3>Book with the maximum price:</h3>";
+echo "Title: {$maxPriceBook['title']} , Price: {$maxPriceBook['price']}<br>";
 
 $conn->close();
 ?>
