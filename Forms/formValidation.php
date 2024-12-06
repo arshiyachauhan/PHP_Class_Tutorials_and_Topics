@@ -1,16 +1,25 @@
 <?php
-$errname=" ";
-if(isset($_POST["save"])){
-    if(empty($_POST['name'])){
-        $errname= "name is required";
-    }else{
-    echo "The name is ",$_POST["name"];
+$errname = " ";
+$erremail = " ";
+
+if (isset($_POST["save"])) {
+    // Validate name
+    if (empty($_POST['name'])) {
+        $errname = "Name is required.";
+    } else {
+        echo "The name is ", htmlspecialchars($_POST["name"]), "<br>";
+    }
+
+    // Validate email
+    if (empty($_POST['email'])) {
+        $erremail = "Email is required.";
+    } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $erremail = "Invalid email format.";
+    } else {
+        echo "The email is ", htmlspecialchars($_POST["email"]), "<br>";
     }
 }
-//add php script above html
-?> 
-
-<!-- email-validation- (!filter_var($_POST['email'])) -->
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,16 +28,19 @@ if(isset($_POST["save"])){
     <title>Document</title>
 </head>
 <body>
-<!-- htmlspecialchars()- used to protect data from attackers, enclose $_SERVER['PHP_SELF'], replace html special characters with html entity -->
-    <form method ="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>">
+<!-- htmlspecialchars() used to protect data from attackers by replacing special characters -->
+    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         UserName:
-        <input type="text" name="name" >
-        <!-- applying validatiopn for required field -->
+        <input type="text" name="name">
+        <!-- applying validation for required field -->
         <span style="color: red">*<?php echo $errname; ?></span>
-        <br>
+        <br><br>
         Email:
-        <input type="email" name ="">
-        <input type="submit" name="save">
-</form>
+        <input type="text" name="email">
+        <!-- applying validation for required field -->
+        <span style="color: red">*<?php echo $erremail; ?></span>
+        <br><br>
+        <input type="submit" name="save" value="Submit">
+    </form>
 </body>
 </html>
